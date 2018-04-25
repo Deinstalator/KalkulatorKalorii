@@ -15,7 +15,7 @@ namespace KalkulatorKalorii.Models
         public virtual int ProductTypeId { get; set; }
         public virtual ProductType ProductType { get; set; }
 
-        public virtual int MacronutrientsId { get; set; }
-        public virtual Macronutrients Macronutrients { get; set; }
+        public virtual int MacronutrientId { get; set; }
+        public virtual Macronutrient Macronutrient { get; set; }
     }
 }

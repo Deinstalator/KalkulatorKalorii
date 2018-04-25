@@ -1,8 +1,8 @@
 ﻿namespace KalkulatorKalorii.Models
 {
-    public class Macronutrients
+    public class Macronutrient
     {
-        public int MacronutrientsId { get; set; }
+        public int MacronutrientId { get; set; }
         public int Fat { get; set; }
         public int Carbs { get; set; }
         public int Protein { get; set; }
