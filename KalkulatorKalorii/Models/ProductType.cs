@@ -4,23 +4,23 @@
     {
         public int ProductTypeId { get; set; }
         public Type Type { get; set; }
-        public ProductContent Content { get; set; }
+        public Content Content { get; set; }
         public bool IsVegan { get; set; }
     }
 
     public enum Type
     {
-        desserts,
-        meat,
-        dairy_products,
-        nuts,
-        breads,
-        spices_seasonings,
-        fish_seafood,
-        candies
+        desserts = 0,
+        meat = 1,
+        dairy_products = 2,
+        nuts = 3,
+        breads = 4,
+        vegetables = 5,
+        fish_seafood = 6,
+        other = 7
     }
 
-    public enum ProductContent
+    public enum Content
     {
         HighFat = 0,
         HighCarbs = 1,
