@@ -7,7 +7,10 @@ namespace KalkulatorKalorii.Models.Interfaces
 {
     public interface IProductRepository
     {
-        List<Product> GetAll();
+        List<Product> GetAllProducts();
         Product GetProduct(int productId);
+        int AddProduct(Product product, ProductType productType, Macronutrient macronutrient);
+        int UpdateProduct(Product product);
+        void DeleteProduct(Product product, ProductType productType, Macronutrient macronutrient);
     }
 }

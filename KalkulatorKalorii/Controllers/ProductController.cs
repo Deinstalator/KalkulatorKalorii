@@ -22,7 +22,7 @@ namespace KalkulatorKalorii.Controllers
         [HttpGet("action")]
         public IActionResult GetProducts()
         {
-            return new JsonResult(_productRepository.GetAll());
+            return new JsonResult(_productRepository.GetAllProducts());
         }
     }
 }
