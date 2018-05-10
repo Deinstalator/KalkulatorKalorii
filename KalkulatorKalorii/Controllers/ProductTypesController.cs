@@ -16,7 +16,7 @@ namespace KalkulatorKalorii.Controllers
     {
         private readonly IProductTypeRepository _productTypeRepository;
 
-        public ProductTypesController(ProductTypeRepository productRepository)
+        public ProductTypesController(IProductTypeRepository productRepository)
         {
             _productTypeRepository = productRepository;
         }

@@ -10,13 +10,20 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 
+//***Products Section***\\
+import { ProductsComponent } from './components/product/products.component';
+import { ProductsService } from './components/product/services/products.service';
+import { ProductsBackendService } from './services/products-backend.service';
+import { HttpProductsBackendService } from './services/http-products-backend.services';
+
 @NgModule({
     declarations: [
         AppComponent,
         NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
-        HomeComponent
+        HomeComponent,
+        ProductsComponent
     ],
     imports: [
         CommonModule,
@@ -27,8 +34,13 @@ import { CounterComponent } from './components/counter/counter.component';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'products', component: ProductsComponent },
             { path: '**', redirectTo: 'home' }
         ])
+    ],
+    providers: [
+        ProductsService,
+        { provide: ProductsBackendService, useClass: HttpProductsBackendService }
     ]
 })
 export class AppModuleShared {
