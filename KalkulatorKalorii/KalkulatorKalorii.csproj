@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,16 +22,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\app\components\product\products.component.ts" />
-    <None Remove="ClientApp\app\components\product\services\products.service.ts" />
+    <None Remove="ClientApp\app\components\products\products.component.ts" />
+    <None Remove="ClientApp\app\components\products\services\products.service.ts" />
     <None Remove="ClientApp\app\Models\product.ts" />
     <None Remove="ClientApp\app\services\http-products-backend.services.ts" />
     <None Remove="ClientApp\app\services\products-backend.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\components\product\products.component.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\product\services\products.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\products\components\products.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\products\services\products.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\product.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\http-products-backend.services.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\products-backend.service.ts" />

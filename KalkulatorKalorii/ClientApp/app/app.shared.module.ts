@@ -11,8 +11,8 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 
 //***Products Section***\\
-import { ProductsComponent } from './components/product/products.component';
-import { ProductsService } from './components/product/services/products.service';
+import { ProductsComponent } from './components/products/components/products.component';
+import { ProductsService } from './components/products/services/products.service';
 import { ProductsBackendService } from './services/products-backend.service';
 import { HttpProductsBackendService } from './services/http-products-backend.services';
 

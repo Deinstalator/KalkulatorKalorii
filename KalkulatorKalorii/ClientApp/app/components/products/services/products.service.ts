@@ -21,8 +21,8 @@ export class ProductsService {
         return this.productsBackendService.getProducts();
     }
 
-    updateProduct(updatedProduct: Product): Observable<Product> {
-        return this.updateProduct(updatedProduct);
+    updateProduct(updatedProduct: Product): Observable<number> {
+        return this.productsBackendService.updateProduct(updatedProduct);
     }
 
     deleteProduct(productId: number): Observable<number> {
