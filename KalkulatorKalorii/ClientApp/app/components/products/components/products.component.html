@@ -1,5 +1,34 @@
 ﻿<div>
     <div>
-        <p>{{testowaZmienna}}</p>
+        <p>{{pageTitle}}</p>
+    </div>
+    <div style="margin-top: 15px; margin-right: 25px">
+        <table class="table-responsive">
+            <thead>
+                <tr>
+                    <th class="col-md-1 col-sm-1 col-xs-1">Lp.</th>
+                    <th class="col-md-3 col-sm-3 col-xs-3">Opis</th>
+                    <th class="col-md-2 col-sm-2 col-xs-2">Producent</th>
+                    <th class="col-md-3 col-sm-3 col-xs-3">Kalorie</th>
+                    <th class="col-md-1 col-sm-1 col-xs-1"></th>
+                    <th class="col-md-1 col-sm-1 col-xs-1"></th>
+                    <th class="col-md-1 col-sm-1 col-xs-1"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products let i = index" [attr.data.-index]="i">
+                    <td class="col-md-1 col-sm-1 col-xs-1">{{i + 1}}</td>
+                    <td class="col-md-1 col-sm-1 col-xs-1">{{product.description}}</td>
+                    <td class="col-md-1 col-sm-1 col-xs-1">{{product.producer}}</td>
+                    <td class="col-md-1 col-sm-1 col-xs-1">{{product.calories}}</td>
+                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-primary" (click)="getProduct(product.id)")>Details</button></td>
+                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-success" (click)="getProduct(product.id)" )>Update</button></td>
+                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-danger" (click)="getProduct(product.id)" )>Delete</button></td>
+                </tr>
+                <tr *mgIf="products.length == 0">
+                    <td style="text-align: center" colspan="8">{{tempInfo}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
