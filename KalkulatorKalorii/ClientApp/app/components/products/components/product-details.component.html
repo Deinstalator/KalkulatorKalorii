@@ -1,0 +1,24 @@
+﻿<div>
+    <div style="margin-top: 25px">
+        <a (click)="goBack()" class="btn btn-warning">Wstecz</a><h3>{{pageTitle}}</h3>
+    </div>
+    <div style="margin-top: 25px; margin-bottom: 50px">
+        <form #productForm="ngForm" (ngSubmit)="onSubmit(product)">
+            <div class="form-group">
+                <label for="description">Opis:</label>
+                <textarea [disabled]="!isInEditMode" id="description" name="description" [(ngModel)]="product.description" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="producer">Producent:</label>
+                <textarea [disabled]="!isInEditMode" id="producer" name="producer" [(ngModel)]="product.producer" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="description">Kalorie:</label>
+                <input [disabled]="!isInEditMode" id="calories" name="calories" type="number" [(ngModel)]="product.calories" class="form-control" placeholder="Kalorie..." />
+            </div>
+            <div *ngIf="isInEditMode">
+                <button type="submit" class="btn btn-primary">Zapisz</button>
+            </div>
+        </form>
+    </div>
+</div>

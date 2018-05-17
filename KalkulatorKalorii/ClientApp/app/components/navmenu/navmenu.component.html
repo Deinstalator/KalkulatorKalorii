@@ -12,11 +12,11 @@
         <div class='clearfix'></div>
         <div class='navbar-collapse collapse'>
             <ul class='nav navbar-nav'>
-                <li [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{extract: true}">
+                <li [routerLinkActive]="['link-active']">
                     <a [routerLink]="['/products/new-product']">
                         <span class='glyphicon glyphicon-th-list'></span> Dodaj produkt
                     </a>
-                <li [routerLinkActive]="['link-active']">
+                <li [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{exact: true}">
                     <a [routerLink]="['/products']">
                         <span class='glyphicon glyphicon-th-list'></span> Lista produktow
                     </a>

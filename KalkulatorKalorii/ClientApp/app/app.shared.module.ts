@@ -15,6 +15,7 @@ import { ProductsComponent } from './components/products/components/products.com
 import { ProductsService } from './components/products/services/products.service';
 import { ProductsBackendService } from './services/products-backend.service';
 import { HttpProductsBackendService } from './services/http-products-backend.services';
+import { ProductDetailsComponent } from './components/products/components/product-details.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { HttpProductsBackendService } from './services/http-products-backend.ser
         CounterComponent,
         FetchDataComponent,
         HomeComponent,
-        ProductsComponent
+        ProductsComponent,
+        ProductDetailsComponent
     ],
     imports: [
         CommonModule,
@@ -35,7 +37,10 @@ import { HttpProductsBackendService } from './services/http-products-backend.ser
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'products', component: ProductsComponent },
-            { path: '**', redirectTo: 'home' }
+            { path: 'products/new-product', component: ProductDetailsComponent },
+            { path: 'products/product-details/:id', component: ProductDetailsComponent },
+            { path: 'products/product-update/:id', component: ProductDetailsComponent },
+            { path: '**', redirectTo: 'products' }
         ])
     ],
     providers: [

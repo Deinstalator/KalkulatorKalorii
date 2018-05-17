@@ -1,9 +1,9 @@
 ﻿<div>
     <div>
-        <p>{{pageTitle}}</p>
+        <h3>{{pageTitle}}</h3>
     </div>
     <div style="margin-top: 15px; margin-right: 25px">
-        <table class="table-responsive">
+        <table class="table table-responsive">
             <thead>
                 <tr>
                     <th class="col-md-1 col-sm-1 col-xs-1">Lp.</th>
@@ -22,10 +22,10 @@
                     <td class="col-md-1 col-sm-1 col-xs-1">{{product.producer}}</td>
                     <td class="col-md-1 col-sm-1 col-xs-1">{{product.calories}}</td>
                     <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-primary" (click)="getProduct(product.id)")>Details</button></td>
-                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-success" (click)="getProduct(product.id)" )>Update</button></td>
-                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-danger" (click)="getProduct(product.id)" )>Delete</button></td>
+                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-success" (click)="updateProduct(product.id)" )>Update</button></td>
+                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-danger" (click)="deleteProduct(product.id)" )>Delete</button></td>
                 </tr>
-                <tr *mgIf="products.length == 0">
+                <tr *ngIf="products.length == 0">
                     <td style="text-align: center" colspan="8">{{tempInfo}}</td>
                 </tr>
             </tbody>

@@ -17,11 +17,8 @@ export class ProductsComponent implements OnInit {
     pateTitle: string = "Lista dostępnych produktów";
     tempInfo: string = "Loading...";
 
-    testowaZmienna = "Pozdrowienia z komponentu";
-
     ngOnInit(): void {
         this.downloadProducts();
-        );
     }
 
     downloadProducts(): void {
@@ -36,5 +33,24 @@ export class ProductsComponent implements OnInit {
             },
             error => console.log(error)
         )
+    }
+
+    getProduct(id: number): void {
+        this.router.navigate(['./products/product-details', id]);
+    }
+
+    updateProduct(id: number): void {
+        this.router.navigate(['./products/product-update', id]);
+    }
+
+    deleteProduct(id: number): void {
+        this.productsService.deleteProduct(id).subscribe(
+            onSuccess => {
+                console.log(onSuccess);
+                this.products.splice(this.products.findIndex(prop => prop.id == id), 1)
+            },
+            onError => console.log(onError)
+        );
+        
     }
 }
