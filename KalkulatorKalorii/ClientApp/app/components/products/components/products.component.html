@@ -16,14 +16,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let product of products let i = index" [attr.data.-index]="i">
+                <tr *ngFor="let product of products let i = index" [attr.data-index]="i">
                     <td class="col-md-1 col-sm-1 col-xs-1">{{i + 1}}</td>
                     <td class="col-md-1 col-sm-1 col-xs-1">{{product.description}}</td>
                     <td class="col-md-1 col-sm-1 col-xs-1">{{product.producer}}</td>
                     <td class="col-md-1 col-sm-1 col-xs-1">{{product.calories}}</td>
-                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-primary" (click)="getProduct(product.id)")>Details</button></td>
-                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-success" (click)="updateProduct(product.id)" )>Update</button></td>
-                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-danger" (click)="deleteProduct(product.id)" )>Delete</button></td>
+                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-primary" (click)="getProduct(product.id)">Details</button></td>
+                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-success" (click)="updateProduct(product.id)">Update</button></td>
+                    <td class="col-md-1 col-sm-1 col-xs-1"><button class="btn btn-danger" (click)="deleteProduct(product.id)">Delete</button></td>
                 </tr>
                 <tr *ngIf="products.length == 0">
                     <td style="text-align: center" colspan="8">{{tempInfo}}</td>

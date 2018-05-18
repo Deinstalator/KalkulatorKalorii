@@ -16,7 +16,7 @@ export class ProductDetailsComponent implements OnInit {
         private location: Location
     ) { };
 
-    pageTitle: string;
+    pageTitle: string = "";
     urlParam: number;
     isInEditMode: boolean = true;
     product: Product = new Product();
@@ -33,8 +33,8 @@ export class ProductDetailsComponent implements OnInit {
         }
         else {
             this.pageTitle = "Szczegóły produktu";
-            this.isInEditMode = false;
             this.downloadProduct();
+            this.isInEditMode = false;
         }
     }
 
@@ -47,8 +47,8 @@ export class ProductDetailsComponent implements OnInit {
 
     onSubmit(propObj: Product): void {
         if (this.location.isCurrentPathEqualTo("/products/new-product")) {
-            propObj.productTypeId = 1;
-            propObj.macronutrientId = 1;
+            propObj.productTypeId = 3;
+            propObj.macronutrientId = 3;
             this.productsService.addProduct(propObj).subscribe(
                 onSuccess => console.log(onSuccess),
                 onError => console.log(onError)

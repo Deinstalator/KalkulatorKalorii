@@ -1,7 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from '../../../models/product';
 import { ProductsService } from '../services/products.service';
-import { Router } from '@angular/router';
 
 @Component({
     templateUrl: './products.component.html'
@@ -14,7 +14,7 @@ export class ProductsComponent implements OnInit {
     ) { };
 
     products: Array<Product> = new Array<Product>();
-    pateTitle: string = "Lista dostępnych produktów";
+    pageTitle: string = "Lista dostępnych produktów";
     tempInfo: string = "Loading...";
 
     ngOnInit(): void {
