@@ -29,6 +29,11 @@ namespace KalkulatorKalorii.Models.Repositories
             return productType.ProductTypeId;
         }
 
+        public List<ProductType> GetAll()
+        {
+            return _databaseContext.ProductTypes.ToList();
+        }
+
         public ProductType GetProductType(int productTypeId)
         {
             if(productTypeId <= 0)
@@ -38,6 +43,18 @@ namespace KalkulatorKalorii.Models.Repositories
 
             return _databaseContext.ProductTypes.FirstOrDefault(productType => productType.ProductTypeId == productTypeId);
 
+        }
+
+        public int UpdateProductType(ProductType productType)
+        {
+            if(productType == null)
+            {
+                throw new Exception("Object cannot be null.");
+            }
+
+            _databaseContext.ProductTypes.Update(productType);
+            _databaseContext.SaveChanges();
+            return productType.ProductTypeId;
         }
     }
 }

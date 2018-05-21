@@ -29,6 +29,11 @@ namespace KalkulatorKalorii.Models.Repositories
             return macronutrient.MacronutrientId;
         }
 
+        public List<Macronutrient> GetAll()
+        {
+            return _databaseContext.Macronutrients.ToList();
+        }
+
         public Macronutrient GetMacronutrient(int macronutrientId)
         {
             if(macronutrientId <= 0)
@@ -37,6 +42,18 @@ namespace KalkulatorKalorii.Models.Repositories
             }
 
             return _databaseContext.Macronutrients.FirstOrDefault(macronutrient => macronutrient.MacronutrientId == macronutrientId);
+        }
+
+        public int UpdateMacronutrient(Macronutrient macronutrient)
+        {
+            if(macronutrient == null)
+            {
+                throw new Exception("Object cannot be null.");
+            }
+
+            _databaseContext.Macronutrients.Update(macronutrient);
+            _databaseContext.SaveChanges();
+            return macronutrient.MacronutrientId;
         }
     }
 }

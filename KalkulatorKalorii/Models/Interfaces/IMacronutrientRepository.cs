@@ -9,5 +9,7 @@ namespace KalkulatorKalorii.Models.Interfaces
     {
         int AddMacronutrient(Macronutrient macronutrient);
         Macronutrient GetMacronutrient(int macronutrientId);
+        int UpdateMacronutrient(Macronutrient macronutrient);
+        List<Macronutrient> GetAll();
     }
 }

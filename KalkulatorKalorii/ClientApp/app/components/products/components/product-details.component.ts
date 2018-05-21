@@ -47,8 +47,8 @@ export class ProductDetailsComponent implements OnInit {
 
     onSubmit(propObj: Product): void {
         if (this.location.isCurrentPathEqualTo("/products/new-product")) {
-            propObj.productTypeId = 3;
-            propObj.macronutrientId = 3;
+            propObj.productTypeId = 4;
+            propObj.macronutrientId = 4;
             this.productsService.addProduct(propObj).subscribe(
                 onSuccess => console.log(onSuccess),
                 onError => console.log(onError)

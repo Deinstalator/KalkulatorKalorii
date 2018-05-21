@@ -29,9 +29,36 @@ namespace KalkulatorKalorii.Controllers
                 return BadRequest(ModelState);
             }
 
-            _productTypeRepository.AddProductType(productType);
+            return new JsonResult(_productTypeRepository.AddProductType(productType));
+        }
 
+        [HttpGet("[action]")]
+        public IActionResult GetProductTypes()
+        {
+            return new JsonResult(_productTypeRepository.GetAll());
+        }
+
+        [HttpPost("[action]")]
+        public IActionResult UpdateProductType([FromBody] ProductType productType)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _productTypeRepository.UpdateProductType(productType);
             return new JsonResult(productType.ProductTypeId);
+        }
+
+        [HttpGet("[action]")]
+        public IActionResult GetProductType(int productTypeId)
+        {
+            if(productTypeId <= 0)
+            {
+                return BadRequest("Incorrent productTypeId.");
+            }
+
+            return new JsonResult(_productTypeRepository.GetProductType(productTypeId));
         }
     }
 }

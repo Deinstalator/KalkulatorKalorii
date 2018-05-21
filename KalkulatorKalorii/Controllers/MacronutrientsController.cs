@@ -32,5 +32,34 @@ namespace KalkulatorKalorii.Controllers
 
             return new JsonResult(macronutrient.MacronutrientId);
         }
+
+        [HttpGet("[action]")]
+        public IActionResult GetMacronutrients()
+        {
+            return new JsonResult(_macronutrientRepository.GetAll());
+        }
+
+        [HttpPost("[action]")]
+        public IActionResult UpdateMacronutrient([FromBody] Macronutrient macronutrient)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _macronutrientRepository.UpdateMacronutrient(macronutrient);
+            return new JsonResult(macronutrient.MacronutrientId);
+        }
+
+        [HttpGet("[action]")]
+        public IActionResult GetMacronuitrent(int macronuitrientId)
+        {
+            if(macronuitrientId <= 0)
+            {
+                return BadRequest("Incorrect macronutrient id.");
+            }
+
+            return new JsonResult(_macronutrientRepository.GetMacronutrient(macronuitrientId));
+        }
     }
 }

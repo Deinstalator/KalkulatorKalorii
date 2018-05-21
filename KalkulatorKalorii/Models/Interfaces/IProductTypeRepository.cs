@@ -9,5 +9,7 @@ namespace KalkulatorKalorii.Models.Interfaces
     {
         int AddProductType(ProductType productType);
         ProductType GetProductType(int productTypeId);
+        int UpdateProductType(ProductType productType);
+        List<ProductType> GetAll();
     }
 }
